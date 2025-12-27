@@ -17,21 +17,27 @@ AS_TWITTER = ['13414']
 AS_HETZNER = ['24940']
 AS_OVH = ['16276']
 AS_DIGITALOCEAN = ['14061']
+AS_VULTUR = ['20473']
+AS_SCALEWAY = ['12876']
+AS_AMAZON = ['16509']
 
-META = 'meta.lst'
-TWITTER = 'twitter.lst'
-TELEGRAM = 'telegram.lst'
-CLOUDFLARE = 'cloudflare.lst'
-HETZNER = 'hetzner.lst'
-OVH = 'ovh.lst'
-DIGITALOCEAN = 'digitalocean.lst'
-CLOUDFRONT = 'cloudfront.lst'
+AMAZON = 'amazon.txt'
+SCALEWAY = 'scaleway.txt'
+VULTUR = 'vultur.txt'
+META = 'meta.txt'
+TWITTER = 'twitter.txt'
+TELEGRAM = 'telegram.txt'
+CLOUDFLARE = 'cloudflare.txt'
+HETZNER = 'hetzner.txt'
+OVH = 'ovh.txt'
+DIGITALOCEAN = 'digitalocean.txt'
+CLOUDFRONT = 'cloudfront.txt'
 
 # From https://iplist.opencck.org/
 DISCORD_VOICE_V4='https://iplist.opencck.org/?format=text&data=cidr4&site=discord.gg&site=discord.media'
 DISCORD_VOICE_V6='https://iplist.opencck.org/?format=text&data=cidr6&site=discord.gg&site=discord.media'
 
-DISCORD = 'discord.lst'
+DISCORD = 'discord.txt'
 
 TELEGRAM_CIDR_URL = 'https://core.telegram.org/resources/cidr.txt'
 
@@ -146,6 +152,21 @@ if __name__ == '__main__':
             subnet, as_number = decoded_line.split()
             subnet_list.append((subnet, as_number))
 
+    # Amazon
+    ipv4_merged_amazon, ipv6_merged_amazon = process_subnets(subnet_list, AS_AMAZON)
+    write_subnets_to_file(ipv4_merged_amazon, f'{IPv4_DIR}/{AMAZON}')
+    write_subnets_to_file(ipv6_merged_amazon, f'{IPv6_DIR}/{AMAZON}')
+    
+    # Scaleway
+    ipv4_merged_scaleway, ipv6_merged_scaleway = process_subnets(subnet_list, AS_SCALEWAY)
+    write_subnets_to_file(ipv4_merged_scaleway, f'{IPv4_DIR}/{SCALEWAY}')
+    write_subnets_to_file(ipv6_merged_scaleway, f'{IPv6_DIR}/{SCALEWAY}')
+    
+    # Vultur
+    ipv4_merged_vultur, ipv6_merged_vultur = process_subnets(subnet_list, AS_VULTUR)
+    write_subnets_to_file(ipv4_merged_vultur, f'{IPv4_DIR}/{VULTUR}')
+    write_subnets_to_file(ipv6_merged_vultur, f'{IPv6_DIR}/{VULTUR}')
+    
     # Meta
     ipv4_merged_meta, ipv6_merged_meta = process_subnets(subnet_list, AS_META)
     write_subnets_to_file(ipv4_merged_meta, f'{IPv4_DIR}/{META}')
