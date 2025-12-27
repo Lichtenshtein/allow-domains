@@ -21,23 +21,23 @@ AS_VULTUR = ['20473']
 AS_SCALEWAY = ['12876']
 AS_AMAZON = ['16509']
 
-AMAZON = 'amazon.txt'
-SCALEWAY = 'scaleway.txt'
-VULTUR = 'vultur.txt'
-META = 'meta.txt'
-TWITTER = 'twitter.txt'
-TELEGRAM = 'telegram.txt'
-CLOUDFLARE = 'cloudflare.txt'
-HETZNER = 'hetzner.txt'
-OVH = 'ovh.txt'
-DIGITALOCEAN = 'digitalocean.txt'
-CLOUDFRONT = 'cloudfront.txt'
+AMAZON = 'amazon.lst'
+SCALEWAY = 'scaleway.lst'
+VULTUR = 'vultur.lst'
+META = 'meta.lst'
+TWITTER = 'twitter.lst'
+TELEGRAM = 'telegram.lst'
+CLOUDFLARE = 'cloudflare.lst'
+HETZNER = 'hetzner.lst'
+OVH = 'ovh.lst'
+DIGITALOCEAN = 'digitalocean.lst'
+CLOUDFRONT = 'cloudfront.lst'
 
 # From https://iplist.opencck.org/
 DISCORD_VOICE_V4='https://iplist.opencck.org/?format=text&data=cidr4&site=discord.gg&site=discord.media'
 DISCORD_VOICE_V6='https://iplist.opencck.org/?format=text&data=cidr6&site=discord.gg&site=discord.media'
 
-DISCORD = 'discord.txt'
+DISCORD = 'discord.lst'
 
 TELEGRAM_CIDR_URL = 'https://core.telegram.org/resources/cidr.txt'
 
