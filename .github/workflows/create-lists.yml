@@ -1,16 +1,17 @@
 name: Create lists
 
 on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - .github/workflows/create-lists.yml
-      - Categories/**
-      - Services/**
-      - src/**
-      - convert.py
-  schedule:
-    - cron: '29 8 * * 1'
+#  push:
+#    branches: [ "main" ]
+#    paths:
+#      - .github/workflows/create-lists.yml
+#      - Categories/**
+#      - Services/**
+#      - src/**
+#      - convert.py
+#  schedule:
+#    - cron: '29 8 * * 1'
+  workflow_dispatch:
 
 permissions:
   contents: write
